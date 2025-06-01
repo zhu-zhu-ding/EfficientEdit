@@ -28,6 +28,31 @@ Create your conda environment
 
 ``pip install requirements``
 
+## Test
+
+### L2_test
+
+Users can run data/CodeIF-Bench/L2_test/run_pass_k.sh to compute the Pass@k of L2. The script is shown below.
+
+```python
+ROOT=/EfficientEdit/data/CodeIF-Bench/L2_test
+python run_pass@k.py \
+    --output_file $ROOT/result.jsonl \
+    --log_file $ROOT/log.jsonl \
+    --source_code_root $ROOT/Source_Code \
+    --data_file $ROOT/data.jsonl \
+    --n 1 \
+    --k 1
+```
+The arguments are explained as follows.
+
+output_file: the model's predictions.
+log_file: the output file that stores the evaluation results.
+source_code_root: the path of repositories.The original repositories can be downloaded from [link](https://figshare.com/s/aa2ec81006727d9ddb0c).
+data_file: the metadata file.
+n: number of completions per task, e.g., 1
+k:the k value in Pass@k, e.g., 1
+
 ## Inference
 
 The inference script is [inference.sh](https://github.com/zhu-zhu-ding/EfficientEdit/blob/main/inference.sh)
