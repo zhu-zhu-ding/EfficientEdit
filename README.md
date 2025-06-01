@@ -46,17 +46,12 @@ python run_pass@k.py \
 ```
 The arguments are explained as follows.
 
-output_file: the model's predictions.
-
-log_file: the output file that stores the evaluation results.
-
-source_code_root: the path of repositories.The original repositories can be downloaded from [link](https://figshare.com/s/aa2ec81006727d9ddb0c).
-
-data_file: the metadata file.
-
-n: number of completions per task, e.g., 1
-
-k:the k value in Pass@k, e.g., 1
++ `output_file`: the model's predictions.
++ `log_file`: the output file that stores the evaluation results.
++ `source_code_root`: the path of repositories. The original repositories can be downloaded from [link](https://figshare.com/s/aa2ec81006727d9ddb0c).
++ `data_file`: the metadata file.
++ `n`: number of completions per task, e.g., `1`
++ `k`:the k value in Pass@k, e.g., `1`
 
 ## Inference
 
