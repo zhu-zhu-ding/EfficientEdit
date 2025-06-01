@@ -1,0 +1,23 @@
+[
+    {
+        "id": 10,
+        "name": "csv_parser",
+        "full_name": "10_csv_parser",
+        "before": "class CSVParser:\n    def __init__(self, csv: str):\n        self.csv = csv\n\n    def contents(self) -> list[list[str]]:\n        lines = self.csv.split(\"\\n\")\n        output = []\n        for line in lines:\n            output.append(line.split(\",\"))\n        return output",
+        "after": "class CSVParser:\n    def __init__(self, csv: str):\n        self.csv = csv\n\n    def contents(self) -> list[list[str]]:\n        lines = self.csv.split(\"\\n\")\n        output = []\n        for line in lines:\n            output.append(line.split(\",\"))\n        return output\n\n    def header(self) -> list[str]:\n        lines = self.csv.split(\"\\n\")\n        return lines[0].strip().split(\",\")",
+        "tests": "### START TESTS ###\nif True:  # pragma: no cover\n    parser = CSVParser('''bim,boom,bam,bap\nduck,duck,goose,duck\n1,0,1,0''')\n\n    p2 = CSVParser('''''')\n    p3 = CSVParser('''thing''')\n    p4 = CSVParser('''thing1, thing2\na, a''')\n    p5 = CSVParser(''',\n,''')\n\n    assert parser.contents() == [[\"bim\", \"boom\", \"bam\", \"bap\"],\n                                 [\"duck\", \"duck\", \"goose\", \"duck\"],\n                                 [\"1\", \"0\", \"1\", \"0\"]]\n    assert parser.header() == [\"bim\", \"boom\", \"bam\", \"bap\"]\n    assert p2.contents() == [['']]\n    assert p2.header() == ['']\n    assert p3.contents() == [['thing']]\n    assert p3.header() == ['thing']\n    assert p4.contents() == [['thing1', ' thing2'], ['a', ' a']]\n    assert p4.header() == ['thing1', ' thing2']\n    assert p5.contents() == [['', ''], ['', '']]\n    assert p5.header() == ['', '']",
+        "instruction_descriptive": "Add a function called `header` which returns the first row of a csv file as a list of strings, where\nevery element in the list is a column in the row.",
+        "instruction_lazy": "Add a method called `header` which returns the header of a csv file as a list",
+        "taxonomy": {
+            "change_kind": "adaptive",
+            "libraries": [],
+            "topic": "Language"
+        },
+        "completions": [
+            "class CSVParser:\n    def __init__(self, csv: str):\n        self.csv = csv\n\n    def contents(self) -> list[list[str]]:\n        lines = self.csv.split(\"\\n\")\n        output = []\n        for line in lines:\n            output.append(line.split(\",\"))\n        return output\n\n    def header(self) -> list[str]:\n        return self.contents()[0]\n```\n###User"
+        ],
+        "time": 5.07460722909309,
+        "tokens": 112,
+        "rate": 22.07067363911357
+    }
+]
