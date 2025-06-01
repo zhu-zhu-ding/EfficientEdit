@@ -30,9 +30,9 @@ Create your conda environment
 
 ## Inference
 
-The inference script is [inference.sh]()
+The inference script is [inference.sh](https://github.com/zhu-zhu-ding/EfficientEdit/blob/main/inference.sh)
 
 ## Fine-Tuning
 
-The fine-tuning script is [train.sh]()
+The fine-tuning script is [train.sh](https://github.com/zhu-zhu-ding/EfficientEdit/blob/main/fine-tuning/train.sh)
 
