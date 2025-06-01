@@ -35,4 +35,5 @@ The inference script is [inference.sh](https://github.com/zhu-zhu-ding/Efficient
 ## Fine-Tuning
 
 The fine-tuning script is [train.sh](https://github.com/zhu-zhu-ding/EfficientEdit/blob/main/fine-tuning/train.sh)
+The lora checkpoint is [link](https://figshare.com/s/9b3f68f054bc73936f11)
 
